@@ -6,24 +6,16 @@
  * backgroundColor
  */
 import React from "react";
-const name = "Jon Snow";
-const list = ["a", "b", "c"];
+import Header from "./Header";
+import Footer from "./Footer";
+import Content from "./Content";
 function App() {
   return (
     <>
-      <h1>Heading</h1>
-      <label for="name">Enter your name</label>
-      <input id="name"></input>
-      <h4>{name}</h4>
-      <ul className="list-items">
-        {/* {list.map((item) => {
-          return <li>{item}</li>;
-        })} */}
-        {/* {[<li>a</li>, <li>b</li>, <li>c</li>]} */}
-        <li>a</li>
-        <li>b</li>
-        <li>c</li>
-      </ul>
+      <div>This is div.</div>
+      <Header>This is header.</Header>
+      <Content></Content>
+      <Footer></Footer>
     </>
   );
 }
