@@ -10,7 +10,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Content from "./Content";
 import Child from "./Child";
-
+import List from "./List";
+import Card from "./Card";
 /**
  *
  * background-color:"red";
@@ -31,10 +32,11 @@ function App() {
 
   return (
     <>
-      {/* <Child nameVariable={nameVariable} list={list}></Child> */}
-      {/* <Child {...attributes}></Child> */}
-      <Child setName={setName}></Child>
-      <div style={{ backgroundColor: "red", fontSize: 20 }}>I am red</div>
+      <div>I am div</div>
+      <Card>I am card1</Card>
+      <Card>I am card2</Card>
+      <Card>I am card3</Card>
+      <Card>I am card4</Card>
     </>
   );
 }
