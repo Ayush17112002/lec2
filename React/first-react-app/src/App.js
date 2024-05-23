@@ -9,13 +9,32 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Content from "./Content";
+import Child from "./Child";
+
+/**
+ *
+ * background-color:"red";
+ * font-size:"14"
+ */
+
 function App() {
+  const nameVariable = "vital skills";
+  const list = ["a", "b"];
+  const attributes = {
+    nameVariable,
+    list,
+  };
+
+  function setName(value) {
+    console.log(value);
+  }
+
   return (
     <>
-      <div>This is div.</div>
-      <Header>This is header.</Header>
-      <Content></Content>
-      <Footer></Footer>
+      {/* <Child nameVariable={nameVariable} list={list}></Child> */}
+      {/* <Child {...attributes}></Child> */}
+      <Child setName={setName}></Child>
+      <div style={{ backgroundColor: "red", fontSize: 20 }}>I am red</div>
     </>
   );
 }
