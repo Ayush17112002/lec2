@@ -5,47 +5,44 @@
  * background-color X
  * backgroundColor
  */
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Content from "./Content";
 import Child from "./Child";
 import List from "./List";
 import Card from "./Card";
-/**
- *
- * background-color:"red";
- * font-size:"14"
- */
+import Input from "./Input";
 
 function App() {
-  const nameVariable = "vital skills";
-  const list = ["a", "b"];
-  const attributes = {
-    nameVariable,
-    list,
-  };
+  const [counter, setCounter] = useState(0);
+  // function setNameHandler(event) {
+  //   // name = event.target.value;
+  //   setName(event.target.value); //setName(newValue)
+  //   console.log(name);
+  // }
+  function clickHandler(event) {
+    // setCounter(counter + 1); //1
+    // setCounter(counter + 1); //1
+    /**counter+2 */
 
-  function setName(value) {
-    console.log(value);
+    //UPDATER FUNCTION
+    setCounter((prevCounter) => {
+      //you must return a new value for the state counter
+      return prevCounter + 1;
+    });
+    setCounter((prevCounter) => {
+      //you must return a new value for the state counter
+      return prevCounter + 1;
+    });
+    //2
   }
-
   return (
     <>
-      <div>I am div</div>
-      <Card>I am card1</Card>
-      <Card>I am card2</Card>
-      <Card>I am card3</Card>
-      <Card>I am card4</Card>
+      {/* <Input setName={setNameHandler} /> *<Input></Input> */}
+      <button onClick={clickHandler}>Click me</button>
+      <div>Your counter is: {counter}</div>
     </>
   );
 }
-
-console.log(App());
 export default App;
-
-/**
- * [<li>a</li>, <li>b</li>, <li>c</li>]
- *
- *
- */

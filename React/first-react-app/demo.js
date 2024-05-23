@@ -1,6 +1,4 @@
-function fun() {
-  const a = 1,
-    b = 2;
-  const arr = [a, b];
-  return arr;
-}
+const arr = [1, 2];
+const [a, b] = arr;
+
+console.log(a, b);
