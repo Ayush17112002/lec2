@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="body">
+    <!-- <h1 id="h1">Heading</h1>
+    <h1 id="h2">H2</h1>
+    <button id="btn">Click me</button> -->
+  </body>
+  <script>
+    let body = document.getElementById("body");
+    let h2 = document.getElementById("h2");
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("loaded");
+    });
+    let btn = document.getElementById("btn");
+    let h1 = document.getElementById("h1");
+
+    btn.addEventListener("click", async () => {
+      setTimeout(() => {
+        h1.innerText = "Heading++";
+        console.log("clicked");
+      }, 2000);
+    });
+  </script>
+</html>

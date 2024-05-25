@@ -7,24 +7,50 @@
  *   used to store the state as well as it contains the logic of updating your state
  *   name of hook must start with `use`
  */
-import React, { useState } from "react";
-import useFormInput from "./useFormInput";
+import React, { useEffect, useState } from "react";
 function App() {
-  const { inputValue: firstName, setInputHandler: setFirstName } =
-    useFormInput();
-  const { inputValue: lastName, setInputHandler: setLastName } = useFormInput();
+  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [input, setInput] = useState("");
+
+  useEffect(() => {
+    //logic that may have side-effect
+    console.log("callback runs");
+    const timeoutId = setTimeout(() => {
+      fetch("http://localhost:8080/")
+        .then((response) => {
+          setIsLoading(false);
+          setError(false);
+          console.log("success");
+        })
+        .catch((err) => {
+          setIsLoading(false);
+          setError(true);
+          console.log("error");
+        });
+    }, 2000);
+
+    //clean up function
+    return () => {
+      console.log("cleanup runs");
+      clearTimeout(timeoutId);
+    };
+  }, [input]);
   return (
     <>
-      <label htmlFor="firstName">Enter your first name: </label>
-      <input id="firstName" type="text" onChange={setFirstName} />
-      <br />
-      <label htmlFor="lastName">Enter your first name: </label>
-      <input id="lastName" type="text" onChange={setLastName} />
-      <br />
-      <div>
-        Your Name is: {firstName}
-        {lastName}
-      </div>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : error ? (
+        <div>Error in fetching data</div>
+      ) : (
+        <div>Success</div>
+      )}
+      <input
+        type="text"
+        onChange={(e) => {
+          setInput(e.target.value);
+        }}
+      ></input>
     </>
   );
 }
