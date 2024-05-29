@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Lec10 from "./Lec10/Lec10";
+import Lec11 from "./Lec11/Lec11";
+// import Lec10 from "./Lec10/Lec10";
 function App() {
-  return <Lec10 />;
+  return <Lec11 />;
 }
 
 export default App;
