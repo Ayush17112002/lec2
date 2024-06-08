@@ -1,0 +1,10 @@
+final stylings 
+
+
+p{
+    color:red; 
+}
+
+p{
+    color:blue; 
+}

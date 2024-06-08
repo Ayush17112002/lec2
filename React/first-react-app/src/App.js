@@ -8,6 +8,8 @@ import Feed from "./Lec15/Feed";
 import Error from "./Lec15/Error";
 import ProductList from "./Lec15/ProductList";
 import Product from "./Lec15/Product";
+import Lec16 from "./Lec16/A";
+import A from "./Lec16/A";
 // import Lec10 from "./Lec10/Lec10";
 // import Lec11 from "./Lec11/Lec11";
 // import Lec12 from "./Lec12/Lec12";
@@ -50,7 +52,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return <A />;
 }
 
 export default App;
